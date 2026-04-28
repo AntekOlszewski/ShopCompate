@@ -1,5 +1,11 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-builder.AddProject<Projects.ShopCompare_Api>("api");
+var postgres = builder.AddPostgres("postgres")
+    .WithDataVolume("shopcompare")
+    .AddDatabase("shopcompare-db");
+
+builder.AddProject<Projects.ShopCompare_Api>("api")
+    .WithReference(postgres)
+    .WaitFor(postgres);
 
 builder.Build().Run();
