@@ -29,4 +29,17 @@ internal sealed class CatalogModule(CatalogDbContext dbContext) : ICatalogModule
             .AsNoTracking()
             .AnyAsync(x => x.Id == productId && x.IsActive, cancellationToken);
     }
+    
+    public async Task<IReadOnlyCollection<CatalogProductDto>> GetProductsAsync(
+        CancellationToken cancellationToken = default)
+    {
+        return await dbContext.Products
+            .AsNoTracking()
+            .Select(x => new CatalogProductDto(
+                x.Id,
+                x.Name,
+                x.Price,
+                x.IsActive))
+            .ToListAsync(cancellationToken);
+    }
 }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ShopCompare.Modules.Inventory.Application.Stock.GetStock;
 using ShopCompare.Modules.Inventory.Application.Stock.ReserveStock;
+using ShopCompare.Modules.Inventory.Application.Stock.SeedStock;
 
 namespace ShopCompare.Modules.Inventory;
 
@@ -49,6 +50,18 @@ public static class InventoryEndpoints
             return result.Success
                 ? Results.Ok(result)
                 : Results.BadRequest(result);
+        });
+        
+        group.MapPost("/seed", async (
+            SeedStockHandler handler,
+            CancellationToken cancellationToken) =>
+        {
+            var created = await handler.HandleAsync(cancellationToken);
+
+            return Results.Ok(new
+            {
+                created
+            });
         });
 
         return app;

@@ -9,4 +9,7 @@ public interface ICatalogModule
     Task<bool> ProductExistsAsync(
         Guid productId,
         CancellationToken cancellationToken = default);
+    
+    Task<IReadOnlyCollection<CatalogProductDto>> GetProductsAsync(
+        CancellationToken cancellationToken = default);
 }

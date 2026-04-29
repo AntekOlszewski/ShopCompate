@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ShopCompare.Modules.Inventory.Application;
 using ShopCompare.Modules.Inventory.Application.Stock.GetStock;
 using ShopCompare.Modules.Inventory.Application.Stock.ReserveStock;
+using ShopCompare.Modules.Inventory.Application.Stock.SeedStock;
 using ShopCompare.Modules.Inventory.Infrastructure.Persistence;
 using ShopCompare.Modules.Inventory.PublicApi;
 
@@ -25,6 +26,7 @@ public static class DependencyInjection
 
         services.AddScoped<GetStockHandler>();
         services.AddScoped<ReserveStockHandler>();
+        services.AddScoped<SeedStockHandler>();
 
         services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
 
