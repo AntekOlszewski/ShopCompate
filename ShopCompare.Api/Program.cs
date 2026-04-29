@@ -3,6 +3,8 @@ using ShopCompare.Api;
 using ShopCompare.Api.Middleware;
 using ShopCompare.Modules.Catalog;
 using ShopCompare.Modules.Catalog.Infrastructure.Persistence;
+using ShopCompare.Modules.Inventory;
+using ShopCompare.Modules.Inventory.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,9 @@ using (var scope = app.Services.CreateScope())
 {
     var catalogDb = scope.ServiceProvider.GetRequiredService<CatalogDbContext>();
     catalogDb.Database.Migrate();
+    
+    var inventoryDb = scope.ServiceProvider.GetRequiredService<InventoryDbContext>();
+    inventoryDb.Database.Migrate();
 }
 
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
@@ -32,5 +37,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapCatalogEndpoints();
+app.MapInventoryEndpoints();
 
 app.Run();

@@ -17,6 +17,7 @@
     <ItemGroup>
       <ProjectReference Include="..\ShopCompare.Api\ShopCompare.Api.csproj" />
       <ProjectReference Include="..\ShopCompare.Modules.Catalog\ShopCompare.Modules.Catalog.csproj" />
+      <ProjectReference Include="..\ShopCompare.Modules.Inventory\ShopCompare.Modules.Inventory.csproj" />
     </ItemGroup>
 
 </Project>
