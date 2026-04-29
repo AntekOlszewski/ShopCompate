@@ -7,6 +7,8 @@ using ShopCompare.Modules.Catalog;
 using ShopCompare.Modules.Catalog.Infrastructure.Persistence;
 using ShopCompare.Modules.Inventory;
 using ShopCompare.Modules.Inventory.Infrastructure.Persistence;
+using ShopCompare.Modules.Payments;
+using ShopCompare.Modules.Payments.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +33,9 @@ using (var scope = app.Services.CreateScope())
     
     var cartDb = scope.ServiceProvider.GetRequiredService<CartDbContext>();
     cartDb.Database.Migrate();
+    
+    var paymentsDb = scope.ServiceProvider.GetRequiredService<PaymentsDbContext>();
+    paymentsDb.Database.Migrate();
 }
 
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
@@ -44,5 +49,6 @@ if (app.Environment.IsDevelopment())
 app.MapCatalogEndpoints();
 app.MapInventoryEndpoints();
 app.MapCartEndpoints();
+app.MapPaymentEndpoints();
 
 app.Run();
