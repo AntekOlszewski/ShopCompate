@@ -11,6 +11,7 @@
     <ProjectReference Include="..\ShopCompare.SharedKernel\ShopCompare.SharedKernel.csproj" />
     <ProjectReference Include="..\ShopCompare.Modules.Catalog\ShopCompare.Modules.Catalog.csproj" />
     <ProjectReference Include="..\ShopCompare.Modules.Inventory\ShopCompare.Modules.Inventory.csproj" />
+    <ProjectReference Include="..\ShopCompare.Modules.Cart\ShopCompare.Modules.Cart.csproj" />
   </ItemGroup>
 
   <ItemGroup>

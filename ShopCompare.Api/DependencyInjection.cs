@@ -1,4 +1,5 @@
-﻿using ShopCompare.Modules.Catalog;
+﻿using ShopCompare.Modules.Cart;
+using ShopCompare.Modules.Catalog;
 using ShopCompare.Modules.Inventory;
 
 namespace ShopCompare.Api;
@@ -11,6 +12,7 @@ public static class DependencyInjection
     {
         services.AddCatalogModule(configuration);
         services.AddInventoryModule(configuration);
+        services.AddCartModule(configuration);
 
         return services;
     }

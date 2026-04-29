@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using ShopCompare.Api;
 using ShopCompare.Api.Middleware;
+using ShopCompare.Modules.Cart;
+using ShopCompare.Modules.Cart.Infrastructure.Persistence;
 using ShopCompare.Modules.Catalog;
 using ShopCompare.Modules.Catalog.Infrastructure.Persistence;
 using ShopCompare.Modules.Inventory;
@@ -26,6 +28,9 @@ using (var scope = app.Services.CreateScope())
     
     var inventoryDb = scope.ServiceProvider.GetRequiredService<InventoryDbContext>();
     inventoryDb.Database.Migrate();
+    
+    var cartDb = scope.ServiceProvider.GetRequiredService<CartDbContext>();
+    cartDb.Database.Migrate();
 }
 
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
@@ -38,5 +43,6 @@ if (app.Environment.IsDevelopment())
 
 app.MapCatalogEndpoints();
 app.MapInventoryEndpoints();
+app.MapCartEndpoints();
 
 app.Run();
