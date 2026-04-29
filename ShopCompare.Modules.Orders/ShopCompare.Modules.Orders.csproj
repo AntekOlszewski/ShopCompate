@@ -4,7 +4,20 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Orders</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.7"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.7"/>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ShopCompare.Modules.Cart\ShopCompare.Modules.Cart.csproj" />
+        <ProjectReference Include="..\ShopCompare.Modules.Inventory\ShopCompare.Modules.Inventory.csproj" />
+        <ProjectReference Include="..\ShopCompare.Modules.Notifications\ShopCompare.Modules.Notifications.csproj"/>
+        <ProjectReference Include="..\ShopCompare.Modules.Payments\ShopCompare.Modules.Payments.csproj" />
+    </ItemGroup>
 
 </Project>

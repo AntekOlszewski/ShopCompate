@@ -9,6 +9,8 @@ using ShopCompare.Modules.Inventory;
 using ShopCompare.Modules.Inventory.Infrastructure.Persistence;
 using ShopCompare.Modules.Notifications;
 using ShopCompare.Modules.Notifications.Infrastructure.Persistence;
+using ShopCompare.Modules.Orders;
+using ShopCompare.Modules.Orders.Infrastructure.Persistence;
 using ShopCompare.Modules.Payments;
 using ShopCompare.Modules.Payments.Infrastructure.Persistence;
 
@@ -41,6 +43,9 @@ using (var scope = app.Services.CreateScope())
     
     var notificationsDb = scope.ServiceProvider.GetRequiredService<NotificationsDbContext>();
     notificationsDb.Database.Migrate();
+    
+    var ordersDb = scope.ServiceProvider.GetRequiredService<OrdersDbContext>();
+    ordersDb.Database.Migrate();
 }
 
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
@@ -56,5 +61,6 @@ app.MapInventoryEndpoints();
 app.MapCartEndpoints();
 app.MapPaymentEndpoints();
 app.MapNotificationEndpoints();
+app.MapOrderEndpoints();
 
 app.Run();
