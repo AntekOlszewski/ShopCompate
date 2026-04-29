@@ -1,6 +1,7 @@
 ﻿using ShopCompare.Modules.Cart;
 using ShopCompare.Modules.Catalog;
 using ShopCompare.Modules.Inventory;
+using ShopCompare.Modules.Notifications;
 using ShopCompare.Modules.Payments;
 
 namespace ShopCompare.Api;
@@ -15,6 +16,7 @@ public static class DependencyInjection
         services.AddInventoryModule(configuration);
         services.AddCartModule(configuration);
         services.AddPaymentsModule(configuration);
+        services.AddNotificationsModule(configuration);
 
         return services;
     }
