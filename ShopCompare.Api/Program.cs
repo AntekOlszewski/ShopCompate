@@ -3,10 +3,6 @@ using ShopCompare.Api;
 using ShopCompare.Api.Middleware;
 using ShopCompare.Modules.Cart;
 using ShopCompare.Modules.Cart.Infrastructure.Persistence;
-using ShopCompare.Catalog.Api;
-using ShopCompare.Catalog.Api.Infrastructure.Persistence;
-using ShopCompare.Modules.Inventory;
-using ShopCompare.Modules.Inventory.Infrastructure.Persistence;
 using ShopCompare.Modules.Notifications;
 using ShopCompare.Modules.Notifications.Infrastructure.Persistence;
 using ShopCompare.Modules.Orders;
@@ -29,12 +25,6 @@ app.MapDefaultEndpoints();
 
 using (var scope = app.Services.CreateScope())
 {
-    var catalogDb = scope.ServiceProvider.GetRequiredService<CatalogDbContext>();
-    catalogDb.Database.Migrate();
-    
-    var inventoryDb = scope.ServiceProvider.GetRequiredService<InventoryDbContext>();
-    inventoryDb.Database.Migrate();
-    
     var cartDb = scope.ServiceProvider.GetRequiredService<CartDbContext>();
     cartDb.Database.Migrate();
     
@@ -56,8 +46,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapCatalogEndpoints();
-app.MapInventoryEndpoints();
 app.MapCartEndpoints();
 app.MapPaymentEndpoints();
 app.MapNotificationEndpoints();

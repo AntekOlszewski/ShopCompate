@@ -1,6 +1,6 @@
 ﻿using ShopCompare.Modules.Cart.Domain;
 using ShopCompare.Catalog.Api.Domain;
-using ShopCompare.Modules.Inventory.Domain;
+using ShopCompare.Inventory.Api.Domain;
 using ShopCompare.Modules.Notifications.Domain;
 using ShopCompare.Modules.Orders.Domain;
 using ShopCompare.Modules.Payments.Domain;
@@ -12,7 +12,7 @@ public static class ModuleAssemblies
     public static IReadOnlyCollection<ModuleDefinition> All { get; } =
     [
         new("Catalog", "ShopCompare.Catalog.Api", typeof(Product).Assembly),
-        new("Inventory", "ShopCompare.Modules.Inventory", typeof(StockItem).Assembly),
+        new("Inventory", "ShopCompare.Inventory.Api", typeof(StockItem).Assembly),
         new("Cart", "ShopCompare.Modules.Cart", typeof(Cart).Assembly),
         new("Orders", "ShopCompare.Modules.Orders", typeof(Order).Assembly),
         new("Payments", "ShopCompare.Modules.Payments", typeof(Payment).Assembly),

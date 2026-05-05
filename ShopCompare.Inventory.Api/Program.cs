@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using ShopCompare.Catalog.Api;
-using ShopCompare.Catalog.Api.Infrastructure.Persistence;
+using ShopCompare.Inventory.Api;
+using ShopCompare.Inventory.Api.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +9,7 @@ builder.AddServiceDefaults();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCatalogApi(builder.Configuration);
+builder.Services.AddInventoryApi(builder.Configuration);
 
 var app = builder.Build();
 
@@ -22,10 +22,10 @@ if (app.Environment.IsDevelopment())
 }
 
 using var scope = app.Services.CreateScope();
-var dbContext = scope.ServiceProvider.GetRequiredService<CatalogDbContext>();
+var dbContext = scope.ServiceProvider.GetRequiredService<InventoryDbContext>();
 await dbContext.Database.MigrateAsync();
 
-app.MapCatalogEndpoints();
-app.MapInternalCatalogEndpoints();
+app.MapInventoryEndpoints();
+app.MapInternalInventoryEndpoints();
 
 app.Run();

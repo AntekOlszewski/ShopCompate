@@ -18,7 +18,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ShopCompare.Modules.Cart\ShopCompare.Modules.Cart.csproj" />
-      <ProjectReference Include="..\ShopCompare.Modules.Inventory\ShopCompare.Modules.Inventory.csproj" />
       <ProjectReference Include="..\ShopCompare.Modules.Orders\ShopCompare.Modules.Orders.csproj" />
     </ItemGroup>
 

@@ -1,5 +1,5 @@
 ﻿using ShopCompare.Modules.Cart.PublicApi;
-using ShopCompare.Modules.Inventory.PublicApi;
+using ShopCompare.Inventory.Api.PublicApi;
 using ShopCompare.Modules.Notifications.PublicApi;
 using ShopCompare.Modules.Orders.Domain;
 using ShopCompare.Modules.Orders.Infrastructure.Persistence;

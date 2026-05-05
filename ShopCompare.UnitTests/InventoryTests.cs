@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using ShopCompare.Modules.Inventory.Domain;
+using ShopCompare.Inventory.Api.Domain;
 using ShopCompare.SharedKernel.Exceptions;
 using Xunit;
 
