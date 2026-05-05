@@ -37,6 +37,20 @@ var notifications = builder.AddProject<Projects.ShopCompare_Notifications_Api>("
     .WithReference(notificationsDb)
     .WaitFor(notificationsDb);
 
+var ordersDb = postgres.AddDatabase("orders-db");
+
+var orders = builder.AddProject<Projects.ShopCompare_Orders_Api>("orders-api")
+    .WithReference(ordersDb)
+    .WithReference(cart)
+    .WithReference(inventory)
+    .WithReference(payments)
+    .WithReference(notifications)
+    .WaitFor(ordersDb)
+    .WaitFor(cart)
+    .WaitFor(inventory)
+    .WaitFor(payments)
+    .WaitFor(notifications);
+
 builder.AddProject<Projects.ShopCompare_Api>("api")
     .WithReference(postgres)
     .WaitFor(postgres);
