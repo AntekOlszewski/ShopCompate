@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopCompare.Modules.Cart.Infrastructure.Persistence;
-using ShopCompare.Modules.Catalog.PublicApi;
+using ShopCompare.Catalog.Api.PublicApi;
 
 namespace ShopCompare.Modules.Cart.Application.Carts.AddCartItem;
 

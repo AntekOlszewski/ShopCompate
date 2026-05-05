@@ -1,5 +1,5 @@
 ﻿using ShopCompare.Modules.Cart;
-using ShopCompare.Modules.Catalog;
+using ShopCompare.Catalog.Api;
 using ShopCompare.Modules.Inventory;
 using ShopCompare.Modules.Notifications;
 using ShopCompare.Modules.Orders;

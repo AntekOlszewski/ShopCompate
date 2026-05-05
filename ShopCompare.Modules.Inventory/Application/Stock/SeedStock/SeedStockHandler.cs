@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopCompare.Modules.Catalog.PublicApi;
+using ShopCompare.Catalog.Api.PublicApi;
 using ShopCompare.Modules.Inventory.Domain;
 using ShopCompare.Modules.Inventory.Infrastructure.Persistence;
 

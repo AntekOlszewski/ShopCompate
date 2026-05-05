@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShopCompare.Api\ShopCompare.Api.csproj" />
+    <ProjectReference Include="..\ShopCompare.Catalog.Api\ShopCompare.Catalog.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>

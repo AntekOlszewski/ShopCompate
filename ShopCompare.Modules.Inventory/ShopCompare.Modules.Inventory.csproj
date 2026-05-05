@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ShopCompare.Modules.Catalog\ShopCompare.Modules.Catalog.csproj" />
+      <ProjectReference Include="..\ShopCompare.Catalog.Api\ShopCompare.Catalog.Api.csproj" />
       <ProjectReference Include="..\ShopCompare.SharedKernel\ShopCompare.SharedKernel.csproj" />
     </ItemGroup>
 

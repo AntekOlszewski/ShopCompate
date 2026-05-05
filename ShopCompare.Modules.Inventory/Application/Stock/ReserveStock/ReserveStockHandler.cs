@@ -1,4 +1,4 @@
-﻿using ShopCompare.Modules.Catalog.PublicApi;
+﻿using ShopCompare.Catalog.Api.PublicApi;
 using ShopCompare.Modules.Inventory.PublicApi;
 
 namespace ShopCompare.Modules.Inventory.Application.Stock.ReserveStock;
