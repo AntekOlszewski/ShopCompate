@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ShopCompare.Modules.Payments.Application.Payments.ProcessPayment;
+namespace ShopCompare.Payments.Api.Application.Payments.ProcessPayment;
 
 public sealed class ProcessPaymentRequestValidator : AbstractValidator<ProcessPaymentRequest>
 {

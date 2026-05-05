@@ -1,6 +1,5 @@
 ﻿using ShopCompare.Modules.Notifications;
 using ShopCompare.Modules.Orders;
-using ShopCompare.Modules.Payments;
 
 namespace ShopCompare.Api;
 
@@ -10,7 +9,6 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddPaymentsModule(configuration);
         services.AddNotificationsModule(configuration);
         services.AddOrdersModule(configuration);
 

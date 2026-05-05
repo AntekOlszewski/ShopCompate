@@ -2,21 +2,18 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ShopCompare.Modules.Payments.Infrastructure.Persistence;
+using ShopCompare.Payments.Api.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace ShopCompare.Modules.Payments.Infrastructure.Persistence.Migrations
+namespace ShopCompare.Payments.Api.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(PaymentsDbContext))]
-    [Migration("20260429153319_InitialPayments")]
-    partial class InitialPayments
+    partial class PaymentsDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,7 +23,7 @@ namespace ShopCompare.Modules.Payments.Infrastructure.Persistence.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ShopCompare.Modules.Payments.Domain.Payment", b =>
+            modelBuilder.Entity("ShopCompare.Payments.Api.Domain.Payment", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");

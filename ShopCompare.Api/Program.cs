@@ -5,8 +5,6 @@ using ShopCompare.Modules.Notifications;
 using ShopCompare.Modules.Notifications.Infrastructure.Persistence;
 using ShopCompare.Modules.Orders;
 using ShopCompare.Modules.Orders.Infrastructure.Persistence;
-using ShopCompare.Modules.Payments;
-using ShopCompare.Modules.Payments.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,9 +21,6 @@ app.MapDefaultEndpoints();
 
 using (var scope = app.Services.CreateScope())
 {
-    var paymentsDb = scope.ServiceProvider.GetRequiredService<PaymentsDbContext>();
-    paymentsDb.Database.Migrate();
-    
     var notificationsDb = scope.ServiceProvider.GetRequiredService<NotificationsDbContext>();
     notificationsDb.Database.Migrate();
     
@@ -41,7 +36,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapPaymentEndpoints();
 app.MapNotificationEndpoints();
 app.MapOrderEndpoints();
 

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ShopCompare.Modules.Payments.Domain;
+using ShopCompare.Payments.Api.Domain;
 
-namespace ShopCompare.Modules.Payments.Infrastructure.Persistence.Configurations;
+namespace ShopCompare.Payments.Api.Infrastructure.Persistence.Configurations;
 
 internal sealed class PaymentConfiguration : IEntityTypeConfiguration<Payment>
 {

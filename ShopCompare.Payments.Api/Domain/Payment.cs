@@ -1,6 +1,6 @@
 ﻿using ShopCompare.SharedKernel.Exceptions;
 
-namespace ShopCompare.Modules.Payments.Domain;
+namespace ShopCompare.Payments.Api.Domain;
 
 public sealed class Payment
 {

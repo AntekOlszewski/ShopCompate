@@ -25,6 +25,12 @@ var cart = builder.AddProject<Projects.ShopCompare_Cart_Api>("cart-api")
     .WaitFor(cartDb)
     .WaitFor(catalog);
 
+var paymentsDb = postgres.AddDatabase("payments-db");
+
+var payments = builder.AddProject<Projects.ShopCompare_Payments_Api>("payments-api")
+    .WithReference(paymentsDb)
+    .WaitFor(paymentsDb);
+
 builder.AddProject<Projects.ShopCompare_Api>("api")
     .WithReference(postgres)
     .WaitFor(postgres);

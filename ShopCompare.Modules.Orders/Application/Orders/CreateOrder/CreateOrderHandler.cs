@@ -3,7 +3,7 @@ using ShopCompare.Inventory.Api.PublicApi;
 using ShopCompare.Modules.Notifications.PublicApi;
 using ShopCompare.Modules.Orders.Domain;
 using ShopCompare.Modules.Orders.Infrastructure.Persistence;
-using ShopCompare.Modules.Payments.PublicApi;
+using ShopCompare.Payments.Api.PublicApi;
 
 namespace ShopCompare.Modules.Orders.Application.Orders.CreateOrder;
 

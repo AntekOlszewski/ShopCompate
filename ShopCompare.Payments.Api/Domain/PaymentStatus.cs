@@ -1,4 +1,4 @@
-﻿namespace ShopCompare.Modules.Payments.Domain;
+﻿namespace ShopCompare.Payments.Api.Domain;
 
 public enum PaymentStatus
 {

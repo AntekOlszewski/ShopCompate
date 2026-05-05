@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopCompare.Modules.Payments.Domain;
+using ShopCompare.Payments.Api.Domain;
 
-namespace ShopCompare.Modules.Payments.Infrastructure.Persistence;
+namespace ShopCompare.Payments.Api.Infrastructure.Persistence;
 
 public sealed class PaymentsDbContext(DbContextOptions<PaymentsDbContext> options) : DbContext(options)
 {

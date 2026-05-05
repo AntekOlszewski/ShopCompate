@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ShopCompare.Modules.Payments.Infrastructure.Persistence.Migrations
+namespace ShopCompare.Payments.Api.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class InitialPayments : Migration

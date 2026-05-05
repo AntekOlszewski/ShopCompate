@@ -1,7 +1,7 @@
-﻿using ShopCompare.Modules.Payments.Domain;
-using ShopCompare.Modules.Payments.Infrastructure.Persistence;
+﻿using ShopCompare.Payments.Api.Domain;
+using ShopCompare.Payments.Api.Infrastructure.Persistence;
 
-namespace ShopCompare.Modules.Payments.Application.Payments.ProcessPayment;
+namespace ShopCompare.Payments.Api.Application.Payments.ProcessPayment;
 
 public sealed class ProcessPaymentHandler(PaymentsDbContext dbContext)
 {

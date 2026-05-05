@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using ShopCompare.Modules.Payments.Application.Payments.ProcessPayment;
+using ShopCompare.Payments.Api.Application.Payments.ProcessPayment;
 
-namespace ShopCompare.Modules.Payments;
+namespace ShopCompare.Payments.Api;
 
 public static class PaymentEndpoints
 {
