@@ -1,4 +1,4 @@
-﻿using ShopCompare.Modules.Cart.PublicApi;
+﻿using ShopCompare.Cart.Api.PublicApi;
 using ShopCompare.Inventory.Api.PublicApi;
 using ShopCompare.Modules.Notifications.PublicApi;
 using ShopCompare.Modules.Orders.Domain;

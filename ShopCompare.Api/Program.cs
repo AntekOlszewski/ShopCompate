@@ -1,8 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ShopCompare.Api;
 using ShopCompare.Api.Middleware;
-using ShopCompare.Modules.Cart;
-using ShopCompare.Modules.Cart.Infrastructure.Persistence;
 using ShopCompare.Modules.Notifications;
 using ShopCompare.Modules.Notifications.Infrastructure.Persistence;
 using ShopCompare.Modules.Orders;
@@ -25,9 +23,6 @@ app.MapDefaultEndpoints();
 
 using (var scope = app.Services.CreateScope())
 {
-    var cartDb = scope.ServiceProvider.GetRequiredService<CartDbContext>();
-    cartDb.Database.Migrate();
-    
     var paymentsDb = scope.ServiceProvider.GetRequiredService<PaymentsDbContext>();
     paymentsDb.Database.Migrate();
     
@@ -46,7 +41,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapCartEndpoints();
 app.MapPaymentEndpoints();
 app.MapNotificationEndpoints();
 app.MapOrderEndpoints();

@@ -1,5 +1,4 @@
-﻿using ShopCompare.Modules.Cart;
-using ShopCompare.Modules.Notifications;
+﻿using ShopCompare.Modules.Notifications;
 using ShopCompare.Modules.Orders;
 using ShopCompare.Modules.Payments;
 
@@ -11,7 +10,6 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddCartModule(configuration);
         services.AddPaymentsModule(configuration);
         services.AddNotificationsModule(configuration);
         services.AddOrdersModule(configuration);

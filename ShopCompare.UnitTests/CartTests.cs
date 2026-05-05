@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using ShopCompare.Modules.Cart.Domain;
 using Xunit;
 
 namespace ShopCompare.UnitTests;
@@ -9,7 +8,7 @@ public sealed class CartTests
     [Fact]
     public void AddItem_Should_Add_New_Item()
     {
-        var cart = new Cart(Guid.NewGuid(), Guid.NewGuid());
+        var cart = new Cart.Api.Domain.Cart(Guid.NewGuid(), Guid.NewGuid());
 
         cart.AddItem(Guid.NewGuid(), "Product 1", 100m, 2);
 
@@ -20,7 +19,7 @@ public sealed class CartTests
     [Fact]
     public void AddItem_When_Product_Already_Exists_Should_Increase_Quantity()
     {
-        var cart = new Cart(Guid.NewGuid(), Guid.NewGuid());
+        var cart = new Cart.Api.Domain.Cart(Guid.NewGuid(), Guid.NewGuid());
         var productId = Guid.NewGuid();
 
         cart.AddItem(productId, "Product 1", 100m, 2);

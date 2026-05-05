@@ -17,6 +17,14 @@ var inventory = builder.AddProject<Projects.ShopCompare_Inventory_Api>("inventor
     .WaitFor(inventoryDb)
     .WaitFor(catalog);
 
+var cartDb = postgres.AddDatabase("cart-db");
+
+var cart = builder.AddProject<Projects.ShopCompare_Cart_Api>("cart-api")
+    .WithReference(cartDb)
+    .WithReference(catalog)
+    .WaitFor(cartDb)
+    .WaitFor(catalog);
+
 builder.AddProject<Projects.ShopCompare_Api>("api")
     .WithReference(postgres)
     .WaitFor(postgres);
