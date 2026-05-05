@@ -1,6 +1,6 @@
 ﻿using ShopCompare.Cart.Api.PublicApi;
 using ShopCompare.Inventory.Api.PublicApi;
-using ShopCompare.Modules.Notifications.PublicApi;
+using ShopCompare.Notifications.Api.PublicApi;
 using ShopCompare.Modules.Orders.Domain;
 using ShopCompare.Modules.Orders.Infrastructure.Persistence;
 using ShopCompare.Payments.Api.PublicApi;

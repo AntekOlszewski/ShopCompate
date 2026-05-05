@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ShopCompare.Modules.Notifications.Infrastructure.Persistence.Migrations
+namespace ShopCompare.Notifications.Api.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class InitialNotifications : Migration

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ShopCompare.Modules.Notifications.Domain;
+using ShopCompare.Notifications.Api.Domain;
 
-namespace ShopCompare.Modules.Notifications.Infrastructure.Persistence.Configurations;
+namespace ShopCompare.Notifications.Api.Infrastructure.Persistence.Configurations;
 
 internal sealed class NotificationConfiguration : IEntityTypeConfiguration<Notification>
 {

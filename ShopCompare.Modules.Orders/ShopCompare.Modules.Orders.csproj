@@ -13,8 +13,4 @@
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\ShopCompare.Modules.Notifications\ShopCompare.Modules.Notifications.csproj"/>
-    </ItemGroup>
-
 </Project>

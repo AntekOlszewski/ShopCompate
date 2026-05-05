@@ -31,6 +31,12 @@ var payments = builder.AddProject<Projects.ShopCompare_Payments_Api>("payments-a
     .WithReference(paymentsDb)
     .WaitFor(paymentsDb);
 
+var notificationsDb = postgres.AddDatabase("notifications-db");
+
+var notifications = builder.AddProject<Projects.ShopCompare_Notifications_Api>("notifications-api")
+    .WithReference(notificationsDb)
+    .WaitFor(notificationsDb);
+
 builder.AddProject<Projects.ShopCompare_Api>("api")
     .WithReference(postgres)
     .WaitFor(postgres);

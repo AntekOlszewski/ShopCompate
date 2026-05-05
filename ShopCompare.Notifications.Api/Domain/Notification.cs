@@ -1,6 +1,6 @@
 ﻿using ShopCompare.SharedKernel.Exceptions;
 
-namespace ShopCompare.Modules.Notifications.Domain;
+namespace ShopCompare.Notifications.Api.Domain;
 
 public sealed class Notification
 {

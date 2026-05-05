@@ -1,4 +1,4 @@
-﻿namespace ShopCompare.Modules.Notifications.Domain;
+﻿namespace ShopCompare.Notifications.Api.Domain;
 
 public enum NotificationStatus
 {

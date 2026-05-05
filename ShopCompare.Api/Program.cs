@@ -1,8 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ShopCompare.Api;
 using ShopCompare.Api.Middleware;
-using ShopCompare.Modules.Notifications;
-using ShopCompare.Modules.Notifications.Infrastructure.Persistence;
 using ShopCompare.Modules.Orders;
 using ShopCompare.Modules.Orders.Infrastructure.Persistence;
 
@@ -21,9 +19,6 @@ app.MapDefaultEndpoints();
 
 using (var scope = app.Services.CreateScope())
 {
-    var notificationsDb = scope.ServiceProvider.GetRequiredService<NotificationsDbContext>();
-    notificationsDb.Database.Migrate();
-    
     var ordersDb = scope.ServiceProvider.GetRequiredService<OrdersDbContext>();
     ordersDb.Database.Migrate();
 }
@@ -36,7 +31,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapNotificationEndpoints();
 app.MapOrderEndpoints();
 
 app.Run();

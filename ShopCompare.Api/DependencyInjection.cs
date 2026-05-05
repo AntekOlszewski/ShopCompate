@@ -1,5 +1,4 @@
-﻿using ShopCompare.Modules.Notifications;
-using ShopCompare.Modules.Orders;
+﻿using ShopCompare.Modules.Orders;
 
 namespace ShopCompare.Api;
 
@@ -9,7 +8,6 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddNotificationsModule(configuration);
         services.AddOrdersModule(configuration);
 
         return services;

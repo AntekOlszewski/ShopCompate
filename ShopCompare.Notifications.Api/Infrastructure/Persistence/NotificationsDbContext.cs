@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopCompare.Modules.Notifications.Domain;
+using ShopCompare.Notifications.Api.Domain;
 
-namespace ShopCompare.Modules.Notifications.Infrastructure.Persistence;
+namespace ShopCompare.Notifications.Api.Infrastructure.Persistence;
 
 public sealed class NotificationsDbContext(DbContextOptions<NotificationsDbContext> options) : DbContext(options)
 {

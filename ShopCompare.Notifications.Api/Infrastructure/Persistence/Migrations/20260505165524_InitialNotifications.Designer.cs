@@ -2,18 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ShopCompare.Modules.Notifications.Infrastructure.Persistence;
+using ShopCompare.Notifications.Api.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace ShopCompare.Modules.Notifications.Infrastructure.Persistence.Migrations
+namespace ShopCompare.Notifications.Api.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(NotificationsDbContext))]
-    partial class NotificationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260505165524_InitialNotifications")]
+    partial class InitialNotifications
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,7 +26,7 @@ namespace ShopCompare.Modules.Notifications.Infrastructure.Persistence.Migration
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ShopCompare.Modules.Notifications.Domain.Notification", b =>
+            modelBuilder.Entity("ShopCompare.Notifications.Api.Domain.Notification", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");

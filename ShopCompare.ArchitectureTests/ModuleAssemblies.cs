@@ -1,6 +1,6 @@
 ﻿using ShopCompare.Catalog.Api.Domain;
 using ShopCompare.Inventory.Api.Domain;
-using ShopCompare.Modules.Notifications.Domain;
+using ShopCompare.Notifications.Api.Domain;
 using ShopCompare.Modules.Orders.Domain;
 using ShopCompare.Payments.Api.Domain;
 
@@ -15,6 +15,6 @@ public static class ModuleAssemblies
         new("Cart", "ShopCompare.Cart.Api", typeof(Cart.Api.Domain.Cart).Assembly),
         new("Orders", "ShopCompare.Modules.Orders", typeof(Order).Assembly),
         new("Payments", "ShopCompare.Payments.Api", typeof(Payment).Assembly),
-        new("Notifications", "ShopCompare.Modules.Notifications", typeof(Notification).Assembly),
+        new("Notifications", "ShopCompare.Notifications.Api", typeof(Notification).Assembly),
     ];
 }
