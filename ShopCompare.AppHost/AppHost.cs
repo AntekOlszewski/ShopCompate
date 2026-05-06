@@ -51,8 +51,15 @@ var orders = builder.AddProject<Projects.ShopCompare_Orders_Api>("orders-api")
     .WaitFor(payments)
     .WaitFor(notifications);
 
-builder.AddProject<Projects.ShopCompare_Api>("api")
-    .WithReference(postgres)
-    .WaitFor(postgres);
+var gateway = builder.AddYarp("gateway")
+    .WithConfiguration(yarp =>
+    {
+        yarp.AddRoute("/api/products/{**catch-all}", catalog);
+        yarp.AddRoute("/api/inventory/{**catch-all}", inventory);
+        yarp.AddRoute("/api/carts/{**catch-all}", cart);
+        yarp.AddRoute("/api/orders/{**catch-all}", orders);
+        yarp.AddRoute("/api/payments/{**catch-all}", payments);
+        yarp.AddRoute("/api/notifications/{**catch-all}", notifications);
+    });
 
 builder.Build().Run();

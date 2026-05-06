@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ShopCompare.Inventory.Api;
 using ShopCompare.Inventory.Api.Infrastructure.Persistence;
+using ShopCompare.SharedKernel.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddInventoryApi(builder.Configuration);
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
+
+app.UseGlobalExceptionHandling();
 
 if (app.Environment.IsDevelopment())
 {

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShopCompare.ServiceDefaults\ShopCompare.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\ShopCompare.SharedKernel\ShopCompare.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ShopCompare.Notifications.Api;
 using ShopCompare.Notifications.Api.Infrastructure.Persistence;
+using ShopCompare.SharedKernel.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddNotificationsApi(builder.Configuration);
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
+
+app.UseGlobalExceptionHandling();
 
 if (app.Environment.IsDevelopment())
 {

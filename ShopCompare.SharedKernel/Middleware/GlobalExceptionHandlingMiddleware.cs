@@ -1,7 +1,9 @@
 ﻿using System.Net;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using ShopCompare.SharedKernel.Exceptions;
 
-namespace ShopCompare.Api.Middleware;
+namespace ShopCompare.SharedKernel.Middleware;
 
 public sealed class GlobalExceptionHandlingMiddleware(
     RequestDelegate next,

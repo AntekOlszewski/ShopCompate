@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShopCompare.Api\ShopCompare.Api.csproj" />
     <ProjectReference Include="..\ShopCompare.Cart.Api\ShopCompare.Cart.Api.csproj" />
     <ProjectReference Include="..\ShopCompare.Catalog.Api\ShopCompare.Catalog.Api.csproj" />
     <ProjectReference Include="..\ShopCompare.Inventory.Api\ShopCompare.Inventory.Api.csproj" />
@@ -20,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.2.4" />
+    <PackageReference Include="Aspire.Hosting.Yarp" Version="13.2.4" />
   </ItemGroup>
 
 </Project>
