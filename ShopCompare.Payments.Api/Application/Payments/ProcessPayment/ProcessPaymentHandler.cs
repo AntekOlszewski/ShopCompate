@@ -22,8 +22,9 @@ public sealed class ProcessPaymentHandler(PaymentsDbContext dbContext)
 
         await Task.Delay(delay, cancellationToken);
 
-        var isSuccessful = _random.NextDouble() <= 0.95;
-
+        //var isSuccessful = _random.NextDouble() <= 0.95;
+        var isSuccessful = true;
+        
         if (isSuccessful)
         {
             payment.MarkAsSucceeded();
