@@ -1,0 +1,10 @@
+﻿dotnet.process.cpu.time
+run|Start|Stop|Delta
+1|13,9375|19,6093|5,6718
+2|19,8437|25|5,1563
+3|25,1718|30,1875|5,0157
+dotnet.process.memory.working_set
+run|total
+1|257M
+2|254M
+3|230M
