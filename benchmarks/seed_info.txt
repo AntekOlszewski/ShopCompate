@@ -1,0 +1,2 @@
+﻿products count: 10_000
+categories count: 50
