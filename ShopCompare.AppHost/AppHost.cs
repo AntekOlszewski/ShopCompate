@@ -1,7 +1,6 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var postgres = builder.AddPostgres("postgres")
-    .WithDataVolume("shopcompare");
+var postgres = builder.AddPostgres("postgres");
 
 var catalogDb = postgres.AddDatabase("catalog-db");
 
