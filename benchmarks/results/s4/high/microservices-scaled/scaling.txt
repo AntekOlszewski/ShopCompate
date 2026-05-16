@@ -1,0 +1,6 @@
+﻿catalog x 3
+payments x 2
+
+run 1 - unlimited connections to db - a lot of errors
+run 2 - limited connections and increased timeouts
+run 3 - unlimited connections and separate Postgres instance for inventory, catalog and orders

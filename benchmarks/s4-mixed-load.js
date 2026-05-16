@@ -7,19 +7,19 @@ export const options = {
     scenarios: {
         catalog_read: {
             executor: 'constant-vus',
-            vus: 30,
+            vus: 100,
             duration: '3m',
             exec: 'catalogRead',
         },
         create_orders: {
             executor: 'constant-vus',
-            vus: 10,
+            vus: 30,
             duration: '3m',
             exec: 'createOrder',
         },
         payments_io: {
             executor: 'constant-vus',
-            vus: 10,
+            vus: 30,
             duration: '3m',
             exec: 'payment',
         },

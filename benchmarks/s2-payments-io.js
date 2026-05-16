@@ -5,8 +5,8 @@ import { checkOk, randomGuid } from './helpers.js';
 
 export const options = {
     stages: [
-        { duration: '30s', target: 10 },
-        { duration: '2m', target: 10 },
+        { duration: '30s', target: 300 },
+        { duration: '2m', target: 300 },
         { duration: '30s', target: 0 },
     ],
     thresholds: {

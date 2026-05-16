@@ -1,14 +1,18 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 var postgres = builder.AddPostgres("postgres");
+var inventoryPostgres = builder.AddPostgres("inventory-postgres");
+var catalogPostgres = builder.AddPostgres("catalog-postgres");
+var ordersPostgres = builder.AddPostgres("orders-postgres");
 
-var catalogDb = postgres.AddDatabase("catalog-db");
+var catalogDb = catalogPostgres.AddDatabase("catalog-db");
 
 var catalog = builder.AddProject<Projects.ShopCompare_Catalog_Api>("catalog-api")
     .WithReference(catalogDb)
-    .WaitFor(catalogDb);
+    .WaitFor(catalogDb)
+    .WithReplicas(3);
 
-var inventoryDb = postgres.AddDatabase("inventory-db");
+var inventoryDb = inventoryPostgres.AddDatabase("inventory-db");
 
 var inventory = builder.AddProject<Projects.ShopCompare_Inventory_Api>("inventory-api")
     .WithReference(inventoryDb)
@@ -28,7 +32,8 @@ var paymentsDb = postgres.AddDatabase("payments-db");
 
 var payments = builder.AddProject<Projects.ShopCompare_Payments_Api>("payments-api")
     .WithReference(paymentsDb)
-    .WaitFor(paymentsDb);
+    .WaitFor(paymentsDb)
+    .WithReplicas(2);
 
 var notificationsDb = postgres.AddDatabase("notifications-db");
 
@@ -36,7 +41,7 @@ var notifications = builder.AddProject<Projects.ShopCompare_Notifications_Api>("
     .WithReference(notificationsDb)
     .WaitFor(notificationsDb);
 
-var ordersDb = postgres.AddDatabase("orders-db");
+var ordersDb = ordersPostgres.AddDatabase("orders-db");
 
 var orders = builder.AddProject<Projects.ShopCompare_Orders_Api>("orders-api")
     .WithReference(ordersDb)
